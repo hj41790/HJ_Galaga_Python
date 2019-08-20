@@ -10,7 +10,7 @@ class Galaga(Tk):
         Tk.__init__(self, *args, **kwargs)
 
         self.geometry('480x800+300+100')
-        self.title = 'Galaga'
+        self.title('HJ_Galaga_Python')
         self.configure(background='#FFFFFF')
         container = Frame(self)
         container.pack(side="top", fill="both", expand=True)
@@ -25,6 +25,7 @@ class Galaga(Tk):
             frame.grid(row=0, column=0, sticky="nsew")
 
         self.show_frame("Home")
+        #self.show_frame("Gameover")
 
     def show_frame(self, page_name):
         frame = self.frames[page_name]
