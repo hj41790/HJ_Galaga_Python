@@ -31,5 +31,9 @@ class Gameover(Frame):
 
     def savescore(self, event):
         username = self.inputbox.get()
+        self.controller.info["username"] = username
         self.controller.show_frame("Score")
-        print("savescore   "+username)
+    
+    
+    def ready(self):
+        return
