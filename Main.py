@@ -10,11 +10,11 @@ class Galaga(Tk):
         Tk.__init__(self, *args, **kwargs)
 
         self.info = dict()
-        self.info["username"] = 'hyejeong'
+        self.info["username"] = None
         self.info["score"] = -1
 
-        #self.geometry('480x800+300+100')
-        self.geometry('480x800+300+1000')
+        self.geometry('480x800+300+100')
+        #self.geometry('480x800+300+1000')
         self.title('HJ_Galaga_Python')
         self.configure(background='#FFFFFF')
         self.resizable(False, False)

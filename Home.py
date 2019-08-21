@@ -33,6 +33,5 @@ class Home(Frame):
         self.btn_score.configure(font=self.btn_font, borderwidth='0', activebackground='#FFFFFF', background='#E0E0E0', width=20)
         self.btn_score.pack(pady='3m', ipady='3m')
 
-    
     def ready(self):
-        return
+        pass

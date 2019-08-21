@@ -51,6 +51,7 @@ class Score(Frame):
         # ---- insert new record if exist ----
         if self.controller.info["score"] >= 0:
             new_score = (self.controller.info["username"], self.controller.info["score"])
+            print('New Score :', new_score)
             for i in range(0, 10):
                 if i == len(list_score):
                     list_score.append(new_score)
@@ -65,9 +66,11 @@ class Score(Frame):
         for i in range(0, len(list_score)):
             f.write('%s,%d\n' % (list_score[i][0], list_score[i][1]))
             if i < 3:
-                self.list_score_label[i].configure(text=('%4s %-15s %-10d' % (self.list_rank_text[i], list_score[i][0], list_score[i][1])))
+                self.list_score_label[i].configure(text=('%4s %-15s %-10d' %
+                                                         (self.list_rank_text[i], list_score[i][0], list_score[i][1])))
             else:
-                self.list_score_label[i].configure(text=('%5s %-18s %-12d' % (self.list_rank_text[i], list_score[i][0], list_score[i][1])))
+                self.list_score_label[i].configure(text=('%5s %-18s %-12d' %
+                                                         (self.list_rank_text[i], list_score[i][0], list_score[i][1])))
         f.close()
 
         print('score list :', list_score)
