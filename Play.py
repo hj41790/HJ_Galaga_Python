@@ -66,22 +66,22 @@ class Play(Frame):
                 tmp_board.append(tmp)
 
     def press_left(self, event):
-        print('input : left')
+        #print('input : left')
         self.game.move('left')
 
     def press_right(self, event):
-        print('input : right')
+        #print('input : right')
         self.game.move('right')
 
     def press_space(self, event):
-        print('input : space')
+        #print('input : space')
         self.game.move('shoot')
 
     def update_score(self, value):
         # add 'value' amount to current score and update score label
         self.currScore += value
         self.bindscore.set(self.currScore)
-        print('current score : ' + str(self.currScore))
+#        print('current score : ' + str(self.currScore))
 
     def stop_game(self):
         self.controller.info["score"] = self.currScore
@@ -97,6 +97,7 @@ class Play(Frame):
                         self.gameboard[i][j].configure(image=self.lst_image[self.game.board[i][j]])
         finally:
             self.game.lock.release()
+
         if self.isFocused:
             t = threading.Timer(0.05, self.refresh)
             t.daemon = True
@@ -105,9 +106,11 @@ class Play(Frame):
     def ready(self):
         self.isFocused = True
         self.currScore = 0
+        self.bindscore.set(self.currScore)
         self.controller.info["username"] = None
         self.controller.info["score"] = self.currScore
 
+        self.play_frame.focus_set()
         self.game = GameBoard(self)
         self.refresh()
 

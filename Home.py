@@ -34,4 +34,5 @@ class Home(Frame):
         self.btn_score.pack(pady='3m', ipady='3m')
 
     def ready(self):
-        pass
+        self.controller.info["username"] = None
+        self.controller.info["score"] = -1
